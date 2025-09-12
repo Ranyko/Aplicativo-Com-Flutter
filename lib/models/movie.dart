@@ -7,6 +7,11 @@ class Movie{
   final String releaseDate;
   final String posterPath;
   bool isWatched;
+  double? userRating;
+  String? userComment;
+
+
+
 
  Movie({
     required this.id,
@@ -15,7 +20,8 @@ class Movie{
     required this.releaseDate,
     required this.posterPath,
     this.isWatched = false,
-
- });
+    this.userRating,
+    this.userComment,
+  });
 
 }
