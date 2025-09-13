@@ -2,14 +2,20 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
+import 'package:provider/provider.dart';
+import 'providers/movie_provider.dart';
+import 'screens/home/home_screen.dart';
 
 
 void main() {
- 
   runApp(
-    DevicePreview(
+    ChangeNotifierProvider(
+      create: (context) => MovieProvider(),
+      child : DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => const MeuApp(),
+
+    )
     ),
   );
 }
@@ -26,16 +32,7 @@ class MeuApp extends StatelessWidget {
     locale: DevicePreview.locale(context),
     builder: DevicePreview.appBuilder,
 
-      home: Scaffold(
-        
-        appBar: AppBar(
-          title: const Text('Trabalho Faculdade'),
-        ),
-        
-        body: const Center(
-          child: Text('Minha tela em branco!'),
-        ),
-      ),
+      home: const HomeScreen(),
     );
   }
 }
