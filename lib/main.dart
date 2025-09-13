@@ -1,4 +1,7 @@
 
+import 'dart:io';
+
+import 'package:dotenv/dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -7,7 +10,9 @@ import 'providers/movie_provider.dart';
 import 'screens/home/home_screen.dart';
 
 
-void main() {
+Future<void> main()async {
+  await DotEnv.load(Path("../.env"))
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => MovieProvider(),

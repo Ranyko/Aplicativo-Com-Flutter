@@ -3,6 +3,7 @@ import '../models/movie.dart';
 
 class MovieProvider extends ChangeNotifier{
 
+
   final List<Movie> _movies = [
     //filmes de exemplo so pra eu testar
     
@@ -37,4 +38,10 @@ class MovieProvider extends ChangeNotifier{
   
 
 
+}
+
+Future <void> getMovies() async{
+
+
+  
 }
